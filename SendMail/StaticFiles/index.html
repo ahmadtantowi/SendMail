@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title>Newsletter Radya Labs</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Reset : BEGIN -->
+<style>
+
+html,
+body {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+/* What it does: Stops email clients resizing small text. */
+* {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* What it does: Centers email on Android 4.4 */
+div[style*="margin: 16px 0"] {
+    margin: 0 !important;
+}
+
+/* What it does: Stops Outlook from adding extra spacing to tables. */
+table,
+td {
+    mso-table-lspace: 0pt !important;
+    mso-table-rspace: 0pt !important;
+}
+
+/* What it does: Fixes webkit padding issue. */
+table {
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+    margin: 0 auto !important;
+}
+
+/* What it does: Uses a better rendering method when resizing images in IE. */
+img {
+    -ms-interpolation-mode:bicubic;
+}
+
+/* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+a {
+    text-decoration: none;
+}
+
+/* What it does: A work-around for email clients meddling in triggered links. */
+*[x-apple-data-detectors],  /* iOS */
+.unstyle-auto-detected-links *,
+.aBn {
+    border-bottom: 0 !important;
+    cursor: default !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+
+/* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+.a6S {
+    display: none !important;
+    opacity: 0.01 !important;
+}
+
+/* What it does: Prevents Gmail from changing the text color in conversation threads. */
+.im {
+    color: inherit !important;
+}
+
+/* If the above doesn't work, add a .g-img class to any image in question. */
+img.g-img + div {
+    display: none !important;
+}
+
+/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+/* Create one of these media queries for each additional viewport size you'd like to fix */
+
+/* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+    u ~ div .email-container {
+        min-width: 320px !important;
+    }
+}
+/* iPhone 6, 6S, 7, 8, and X */
+@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+    u ~ div .email-container {
+        min-width: 375px !important;
+    }
+}
+/* iPhone 6+, 7+, and 8+ */
+@media only screen and (min-device-width: 414px) {
+    u ~ div .email-container {
+        min-width: 414px !important;
+    }
+}
+
+</style>
+
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+<style>
+
+.no-margin{
+  margin: 0 !important;
+}
+.no-padding{
+  padding: 0 !important;
+}
+.bg_primary{
+	background: #179CD6;
+}
+.bg_white{
+	background: #ffffff;
+}
+.bg_black{
+	background: #000000;
+}
+.bg_header{
+	background-image: url(images/bg_header.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.email-section{
+	padding: 30px;
+}
+
+/*BUTTON*/
+.btn{
+	padding: 8px 15px;
+  text-align: center;
+}
+.btn-block{
+  display: block;
+}
+.btn.btn-primary{
+	border-radius: 30px;
+	background: #285E84;
+	color: #ffffff;
+}
+.btn.btn-primary:hover{
+  background: #18A4E1;
+}
+
+/* TEXT */
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+	color: #000000;
+	margin-top: 0;
+}
+.txt_primary{
+  color: #285E84;
+}
+.txt_white{
+  color: #fff;
+}
+.txt_grey{
+  color: #666;
+}
+.txt_black{
+  color: #222;
+}
+b{
+  font-weight: 500;
+}
+
+body{
+  font-family: 'Rubik', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.8;
+	color: #666;
+  background: #285E84;
+}
+
+a{
+	color: #285E84;
+}
+
+table{
+}
+
+/*LOGO*/
+.logo h1{
+	margin: 0;
+}
+
+/*GREETING*/
+.greeting{
+	position: relative;
+}
+.greeting .text{
+}
+.greeting .text h2{
+	font-size: 30px;
+	margin-bottom: 0;
+}
+
+/*SERVICES*/
+.text-services{
+	padding: 10px 10px 0; 
+	text-align: center;
+}
+.text-services h3{
+	font-size: 20px;
+}
+
+
+/*FOOTER*/
+.footer{
+	color: #818181;
+}
+.footer.top{
+  font-size: 15px;
+  color: #fff;
+}
+.footer.top b{
+  font-weight: 700;
+}
+.footer p a{
+  font-weight: 500;
+  text-decoration: underline;
+	color: #ACACAC;
+}
+.footer p a:hover{
+  color: #285E84;
+}
+
+
+@media screen and (max-width: 400px) {
+
+  .mobile-d-none{
+    display: none;
+  }
+
+}
+
+</style>
+
+
+</head>
+
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #285E84;">
+  
+  <!-- Begin Header -->
+  <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;"> 
+    <tr>
+      <td class="bg_primary logo" style="padding: 1em 2.5em; text-align: center">
+        <img src="images/brand_white.svg" alt="" height="40px" />
+        <p class="txt_white no-margin">www.radyalabs.com &nbsp; &nbsp; | &nbsp; &nbsp; (+62) 022-20450511</p>
+      </td>
+    </tr><!-- end tr -->
+    <tr>
+      <td class="bg_header" style="height: 16px;"></td>
+    </tr><!-- end tr -->
+  </table>
+  <!-- End Header -->
+
+  <div style="max-width: 650px; margin: 0 auto;" class="email-container">
+    <!-- BEGIN BODY -->
+    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+      <!-- Begin Greetings -->
+      <tr>
+        <td valign="middle" class="greeting" style="padding: 2em;">
+          <table class="bg_white">
+            <tr>
+              <td style="padding: 30px;">
+                <p>Hi, everyone.<br /><br />
+                As we know, from time to time the development of information technology becomes very rapid, so does the technology used by Radya Labs. As an IT Solution company, we continue to follow and try to apply new technologies both from programming languages, tools, to framework development. We try to use the latest technology trends with the purpose of producing maximum products, so we can contend with other software development companies. 
+                <br /><br />
+                Then, what are the new technologies applied by Radya Labs?</p> 
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <!-- End Greetings -->
+      <tr>
+        <td style="padding: 2em;">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+            <!-- BEGIN ARTICLE -->
+            <tr>
+              <td class="bg_white email-section">
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td>
+                      <span style="display: block; margin: -30px -30px 30px -30px;"><img src="images/article.jpg" alt="alt_text" style="width: 100%; height: auto; display: block;" ></span>
+                      
+                      <h2 class="txt_primary">Technologies applied by Radya Labs</h2>
+                      <p><b>1. Technology Stack</b><br clear="all" />
+                      There are four application platforms that Radya Labs is working on, that are mobile, web, chatbot, and cross platform. Each platform has its own technology stack, such as the Android Application that uses Java and Kotlin or the cross platform using Xamarin, React-Native, and Flutter.</p>
+                        
+                      <p><b>2. Development Tools</b><br clear="all" />
+                      We also consider the use of the right tools to help the application development process being worked on. Currently, we are using Bitbucket for repository with the implementation of Git Flow to produce better source code management and code quality. Apart from Bitbucket, Radya Labs also uses other tools such as Visual Studio and Visual Studio Code for different purposes and uses.</p>
+                        
+                      <p><b>3. Server</b><br clear="all" />
+                      There are several servers that Radya Labs prepares for the development process according to the requirements and architecture that client need. Some of the servers used by us are Internal Server (on Premise), VPS (as staging server), and Azure Cloud Service. Each type of server has a different function, for example, such as a VPS Server which will be used if the project already in deliverable phase and ready to test by client or in our ways called as ‘weekly build’.</p>
+                        
+                      <p><b>4. DevOps</b><br clear="all" />
+                      Radya Labs has tried to implement DevOps Technology from one years ago, tools that we use is Azure DevOps. One of our goals in implementing this technology is to automate the developer's recurring jobs, such as passing object releases to the development, staging, and production servers. So, with the use of this automation, developers are expected to be able to focus more on the tasks and the generated code.</p>
+                        
+                      <p><b>5. Code Analysis</b><br clear="all" />
+                      Code analysis is used to assess the source code produced by developers to achieve maximum quality. Right now, Radya Labs already implement code analysis method by using SonarQube as a tool.</p> 
+                      
+                      <p><b>6. DevOps x Regression Test</b><br clear="all" />
+                      At the end of 2019, we also doing research about the integration of DevOps UI with Regression Test, we use Katalon Studio and SmartBear as the Testing Tools. The aim of this integration is to ensure all functional applications run well before being deployed to the Production server.</p> 
+                      <br />
+                      <p><a href="https://radyalabs.com/2020/08/radya-labs-technology-update-2020/" target="_blank" class="btn btn-block btn-primary">Read More</a></p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- END ARTICLE -->
+
+            <!-- BEGIN PORTFOLIO -->
+            <tr>
+              <td class="email-section" style="text-align:center;">
+                <table>
+                  <tr>
+                    <td style="padding-top: 40px;">
+                      <h2 class="txt_white no-margin">Our Portfolio</h2>
+                      <p class="txt_white" style="margin-bottom: 0;">We deliver our best performance for every each project to let your customer satisfied with the product</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="bg_white email-section" style="padding: 0; width: 100%;">
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td valign="middle" width="50%">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                          <td class="text-services" style="text-align: left; padding: 20px 20px 20px 30px;">
+                            <div class="heading-section">
+                              <h3 class="txt_primary" style="font-size: 20px; margin-bottom: 0; line-height: 28px;">EzRX</h3>
+                              <p class="mobile-d-none">The APL eZRx customer portal is a service to make easier the customers to make purchase transactions and product payments directly via smartphone.</p>
+                              <p><a href="https://radyalabs.com/portfolio/ezrx/" target="_blank" class="btn btn-block btn-primary">View Detail</a></p>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td valign="middle" width="50%">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                          <td>
+                            <img src="images/porto_1.jpg" alt="" style="width: 100%; max-width: 650px; height: auto; margin: auto; display: block;">
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="bg_white email-section" style="padding: 0; width: 100%;">
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td valign="middle" width="50%">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                          <td>
+                            <img src="images/porto_2.jpg" alt="" style="width: 100%; max-width: 650px; height: auto; margin: auto; display: block;">
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td valign="middle" width="50%">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                          <td class="text-services" style="text-align: left; padding: 20px 20px 20px 30px;">
+                            <div class="heading-section">
+                              <h3 class="txt_primary" style="font-size: 20px; margin-bottom: 0; line-height: 28px;">BINUS – TPKS Mobile</h3>
+                              <p class="mobile-d-none">TPKS Mobile is a mobile application (Android and iOS) that help prospective students at Bina Nusantara University to do selection and TOEFL test.</p>
+                              <p><a href="https://radyalabs.com/portfolio/binus-tpks-mobile/" target="_blank" class="btn btn-block btn-primary">View Detail</a></p>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="bg_white email-section" style="padding: 0; width: 100%;">
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                    <td valign="middle" width="50%">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                          <td class="text-services" style="text-align: left; padding: 20px 20px 20px 30px;">
+                            <div class="heading-section">
+                              <h3 class="txt_primary" style="font-size: 20px; margin-bottom: 0; line-height: 28px;">Distributor Management System</h3>
+                              <p class="mobile-d-none">Distributor Management System is a web-based application that can help distributor to manage and monitor their transaction.</p>
+                              <p><a href="https://radyalabs.com/portfolio/distributor-management-system/" target="_blank" class="btn btn-block btn-primary">View Detail</a></p>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td valign="middle" width="50%">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                          <td>
+                            <img src="images/porto_3.jpg" alt="" style="width: 100%; max-width: 650px; height: auto; margin: auto; display: block;">
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>        
+            <!-- END PORTFOLIO -->
+          </table>
+        </td>
+      </tr>
+    </table>
+    <!-- END BODY -->
+  </div>
+
+  <!-- BEGIN FOOTER -->
+  <br /><br />
+  <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+    <tr>
+      <td valign="middle" class="footer top email-section" style="background: #113956;">
+        <table style="max-width: 650px;" >
+          <tr>
+            <td valign="top" width="30%">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td style="text-align: left;">
+                    Contact our <br />
+                    Account Manager
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td valign="top" width="70%">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td style="text-align: right;">
+                    <b>Risdhika Vidiar</b> <br />
+                    081394264864 &nbsp; | &nbsp; dhika@radyalabs.com
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr><!-- end: tr -->
+    <tr>
+      <td valign="middle" class="bg_white footer email-section">
+        <table>
+          <tr>
+            <td valign="middle">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td style="text-align: center;">
+                    <img src="images/brand_grey.svg" alt="" height="32px" />
+                    <p class="no-margin">Jalan Cikutra Baru X no.20, Neglasari, Cibeunying Kaler, Bandung 40124</p>
+                    <p><a href="#">Go to Radyalabs.com</a></p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <!-- END FOOTER -->
+
+</body>
+</html>
