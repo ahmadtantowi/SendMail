@@ -19,7 +19,7 @@ namespace SendMail.Options
             var mail = default(string);
 
             using var sr = new StreamReader(receiverPath);
-            while ((mail = await sr.ReadLineAsync()) != null)
+            while ((mail = await sr.ReadLineAsync()) != null && !string.IsNullOrWhiteSpace(mail) && !mail.StartsWith('/'))
                 mails.Add(mail);
 
             return mails;
