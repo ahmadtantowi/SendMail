@@ -1,0 +1,27 @@
+name: Release 
+
+on:
+  create:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1.6.0
+        with: 
+          dotnet-version: 3.1
+      
+      - name: Build Windows x64
+        run: dotnet build -c Release -r win-x64 --no-self-contained
+      
+      - name: Build Linux x64
+        run: dotnet build -c Release -r linux-x64 --no-self-contained
+      
+      - name: Build MacOS x64
+        run: dotnet build -c Release -r osx-x64 --no-self-contained
