@@ -2,6 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using SendMail.Helpers;
 using SendMail.Options;
 
 namespace SendMail
@@ -10,7 +11,9 @@ namespace SendMail
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("Starting application...");
+            ColorConsole.WriteWrappedHeader("📧 Send Mail Console Application 📧");
+            ColorConsole.WriteInfo("🏃 Starting application...", true);
+
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -21,11 +24,11 @@ namespace SendMail
             {
                 Console.WriteLine();
                 Console.WriteLine("Menu:");
-                Console.WriteLine("[1] Send Email");
-                Console.WriteLine("[0] Exit");
+                ColorConsole.WriteEmbeddedColorLine("[[darkcyan]1[/darkcyan]] 📤 Send Email");
+                ColorConsole.WriteEmbeddedColorLine("[[darkcyan]0[/darkcyan]] 🚪 Exit");
                 
                 SelectMenu:
-                Console.Write("Select number of Menu: ");
+                ColorConsole.WriteInfo("Select number of Menu: ");
                 var readLine = Console.ReadLine();
 
                 if (readLine == "1")
@@ -40,11 +43,11 @@ namespace SendMail
                             Console.WriteLine();
                             Console.WriteLine("Available Email Template:");
                             for (int i = 0; i < mailOptions.Length; i++)
-                                Console.WriteLine($"[{i + 1}] {mailOptions[i].Subject}");
-                            Console.WriteLine("[0] Cancel");
+                                ColorConsole.WriteEmbeddedColorLine($"[[darkcyan]{i + 1}[/darkcyan]] 📧 {mailOptions[i].Subject}");
+                            ColorConsole.WriteEmbeddedColorLine("[[darkcyan]0[/darkcyan]] ❌ Cancel");
                             
                             SelectTemplate:
-                            Console.Write("Select number of Email Template: ");
+                            ColorConsole.WriteInfo("Select number of Email Template: ");
                             readLine = Console.ReadLine();
 
                             if (int.TryParse(readLine, out var selectedTemplate) && selectedTemplate >= 0 && selectedTemplate <= mailOptions.Length)
@@ -52,20 +55,20 @@ namespace SendMail
                                 if (selectedTemplate != 0)
                                 {
                                     await smtpService.SendMail(smtpOption, mailOptions[selectedTemplate - 1], true);
-                                    Console.WriteLine("Done!");
+                                    ColorConsole.WriteSuccess("✅ Done!", true);
                                 }
                                 break;
                             }
                             else
                             {
-                                Console.WriteLine("You choose wrong menu. Try again!");
+                                ColorConsole.WriteWarning("You choose wrong menu. Try again!", true);
                                 goto SelectTemplate;
                             }
                         }
                     }
                     else
                     {
-                        Console.WriteLine("There is no email template available. Please provide into appsettings.json!");
+                        ColorConsole.WriteError("There is no email template available. Please provide into appsettings.json!", true);
                     }
                 }
                 else if (readLine == "0")
@@ -74,12 +77,12 @@ namespace SendMail
                 }
                 else
                 {
-                    Console.WriteLine("You choose wrong menu. Try again!");
+                    ColorConsole.WriteWarning("You choose wrong menu. Try again!", true);
                     goto SelectMenu;
                 }
             }
 
-            Console.WriteLine("End of application. Goodbye.");
+            ColorConsole.WriteSuccess("End of application. Goodbye 👋👋👋", true);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
+using SendMail.Helpers;
 using SendMail.Options;
 
 namespace SendMail
@@ -50,7 +51,7 @@ namespace SendMail
                         mailMessage.To.Clear();
                         mailMessage.To.Add(mailAddress);
                         
-                        Console.WriteLine($"Sending mail to {mailAddress}");
+                        ColorConsole.WriteInfo($"⏳ Sending mail to {mailAddress}", true);
                         await smtpClient.SendMailAsync(mailMessage).ConfigureAwait(false);
                     }
                 }
@@ -59,13 +60,13 @@ namespace SendMail
                     foreach (var mailAddress in receivers)
                         mailMessage.To.Add(mailAddress);
                     
-                    Console.WriteLine($"Sending mail to {string.Join(", ", receivers)}");
+                    ColorConsole.WriteInfo($"⏳ Sending mail to {string.Join(", ", receivers)}", true);
                     await smtpClient.SendMailAsync(mailMessage).ConfigureAwait(false);
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Oops.. Something went wrong! {Environment.NewLine}{ex.Message}");
+                ColorConsole.WriteError($"Oops.. Something went wrong! {Environment.NewLine}{ex.Message}", true);
             }
         }
     }
