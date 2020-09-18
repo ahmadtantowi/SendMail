@@ -18,28 +18,28 @@ jobs:
           dotnet-version: 3.1
       
       - name: Build Windows
-        run: dotnet build -c Release -r win-x64 --no-self-contained
+        run: dotnet publish -c Release -r win-x64 -o output/win-x64 --no-self-contained
       
       - name: Build Linux
-        run: dotnet build -c Release -r linux-x64 --no-self-contained
+        run: dotnet publish -c Release -r linux-x64 -o output/linux-x64 --no-self-contained
       
       - name: Build MacOS
-        run: dotnet build -c Release -r osx-x64 --no-self-contained
+        run: dotnet publish -c Release -r osx-x64 -o output/osx-x64 --no-self-contained
       
       - name: Zip Windows
         uses: papeloto/action-zip@v1
         with:
-          files: SendMail/bin/Release/netcoreapp3.1/win-x64
+          files: output/win-x64
           dest: SendMail-Windows-x64.zip
       
       - name: Zip Linux
         uses: papeloto/action-zip@v1
         with:
-          files: SendMail/bin/Release/netcoreapp3.1/linux-x64
+          files: output/linux-x64
           dest: SendMail-Linux-x64.zip
       
       - name: Zip MacOS
         uses: papeloto/action-zip@v1
         with:
-          files: SendMail/bin/Release/netcoreapp3.1/osx-x64
+          files: output/osx-x64
           dest: SendMail-MacOS-x64.zip
