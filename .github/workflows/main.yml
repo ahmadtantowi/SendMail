@@ -1,7 +1,7 @@
 name: Release 
 
 on:
-  create:
+  push:
     tags:
       - 'v*'
 
@@ -10,36 +10,44 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Code
+        uses: actions/checkout@v2
         
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1.6.0
         with: 
           dotnet-version: 3.1
       
-      - name: Build Windows
+      - name: Publish Windows
         run: dotnet publish -c Release -r win-x64 -o output/win-x64 --no-self-contained
       
-      - name: Build Linux
+      - name: Publish Linux
         run: dotnet publish -c Release -r linux-x64 -o output/linux-x64 --no-self-contained
       
-      - name: Build MacOS
+      - name: Publish MacOS
         run: dotnet publish -c Release -r osx-x64 -o output/osx-x64 --no-self-contained
       
-      - name: Zip Windows
-        uses: papeloto/action-zip@v1
-        with:
-          files: output/win-x64
-          dest: SendMail-Windows-x64.zip
+      - name: Zip Published Applications
+        run: zip -r SendMail.zip output/win-x64 output/linux-x64 output/osx-x64
       
-      - name: Zip Linux
-        uses: papeloto/action-zip@v1
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          files: output/linux-x64
-          dest: SendMail-Linux-x64.zip
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
       
-      - name: Zip MacOS
-        uses: papeloto/action-zip@v1
+      - name: Upload Release Asset
+        id: upload_release_asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          files: output/osx-x64
-          dest: SendMail-MacOS-x64.zip
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: ./SendMail.zip
+          asset_name: SendMail.zip
+          asset_content_type: application/zip
