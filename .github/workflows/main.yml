@@ -19,16 +19,16 @@ jobs:
           dotnet-version: 3.1
       
       - name: Publish Windows
-        run: dotnet publish -c Release -r win-x64 -o output/win-x64 --no-self-contained
+        run: dotnet publish -c Release -r win-x64 -o SendMail/win-x64 --no-self-contained
       
       - name: Publish Linux
-        run: dotnet publish -c Release -r linux-x64 -o output/linux-x64 --no-self-contained
+        run: dotnet publish -c Release -r linux-x64 -o SendMail/linux-x64 --no-self-contained
       
       - name: Publish MacOS
-        run: dotnet publish -c Release -r osx-x64 -o output/osx-x64 --no-self-contained
+        run: dotnet publish -c Release -r osx-x64 -o SendMail/osx-x64 --no-self-contained
       
-      - name: Zip Published Applications
-        run: zip -r SendMail.zip output/win-x64 output/linux-x64 output/osx-x64
+      - name: Zip Published Application
+        run: zip -r SendMail.zip SendMail/win-x64 SendMail/linux-x64 SendMail/osx-x64
       
       - name: Create Release
         id: create_release
