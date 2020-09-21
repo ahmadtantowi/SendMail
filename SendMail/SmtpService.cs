@@ -51,11 +51,18 @@ namespace SendMail
                 {
                     foreach (var mailAddress in receivers)
                     {
-                        mailMessage.To.Clear();
-                        mailMessage.To.Add(mailAddress);
-                        
-                        ColorConsole.WriteInfo($"⏳ Sending mail to {mailAddress}", true);
-                        await smtpClient.SendMailAsync(mailMessage).ConfigureAwait(false);
+                        try
+                        {
+                            mailMessage.To.Clear();
+                            mailMessage.To.Add(mailAddress);
+                            
+                            ColorConsole.WriteInfo($"⏳ Sending mail to {mailAddress}", true);
+                            await smtpClient.SendMailAsync(mailMessage).ConfigureAwait(false);
+                        }
+                        catch (Exception ex)
+                        {
+                            ColorConsole.WriteError($"Failed send mail to {mailAddress} {Environment.NewLine}{ex.Message}", true);
+                        }
                     }
                 }
                 else
