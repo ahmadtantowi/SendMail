@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
@@ -35,6 +36,11 @@ namespace SendMail
                 {
                     var smtpOption = builder.GetSection(nameof(SmtpOption)).Get<SmtpOption>();
                     var mailOptions = builder.GetSection(nameof(MailOption)).Get<MailOption[]>() ?? Array.Empty<MailOption>();
+                    var variables = new Dictionary<string, string>();
+                    
+                    var filesHostUrl = builder.GetValue<string>("FilesHostUrl");
+                    if (!string.IsNullOrEmpty(filesHostUrl))
+                        variables.Add("FilesHostUrl", filesHostUrl);
                     
                     if (mailOptions.Length != 0)
                     {
@@ -54,7 +60,7 @@ namespace SendMail
                             {
                                 if (selectedTemplate != 0)
                                 {
-                                    await smtpService.SendMail(smtpOption, mailOptions[selectedTemplate - 1], true);
+                                    await smtpService.SendMail(smtpOption, mailOptions[selectedTemplate - 1], variables, true);
                                     ColorConsole.WriteSuccess("✅ Done!", true);
                                 }
                                 break;

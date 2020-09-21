@@ -1,5 +1,5 @@
 using System;
-using System.ComponentModel;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -12,7 +12,7 @@ namespace SendMail
 {
     public class SmtpService
     {
-        public async Task SendMail(SmtpOption smtp, MailOption mail, bool singleReceiver = false)
+        public async Task SendMail(SmtpOption smtp, MailOption mail, IDictionary<string, string> variables = null, bool singleReceiver = false)
         {
             if (smtp is null || mail is null)
                 return;
@@ -38,6 +38,9 @@ namespace SendMail
                 {
                     mailMessage.Body = mail.Body;
                 }
+
+                if (variables != null && variables.Any())
+                    mailMessage.Body = mailMessage.Body.ReplaceVariables(variables);
 
                 using var smtpClient = new SmtpClient(smtp.Host, smtp.Port);
                 smtpClient.Credentials = new NetworkCredential(smtp.UserName, smtp.Password);
