@@ -107,7 +107,6 @@ img.g-img + div {
         min-width: 414px !important;
     }
 }
-
 </style>
 
     <!-- CSS Reset : END -->
@@ -250,7 +249,20 @@ table{
   }
 
 }
-
+.big-table{
+  display: block;
+}
+.small-table{
+  display: none;
+}
+@media screen and (max-width: 500px){
+  .big-table{
+    display: none;
+  }
+  .small-table{
+    display: block;
+  }
+}
 </style>
 
 
@@ -419,8 +431,8 @@ table{
             <!-- BEGIN ARTICLE -->
             <tr>
               <td class="bg_white email-section">
-                <h2 class="txt_primary" style="text-align: center; margin-bottom: 40px;">Technolgy Expertise</h2>
-                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <h2 class="txt_primary" style="text-align: center; margin-bottom: 40px;">Technology Expertise</h2>
+                <table cellpadding="0" cellspacing="0" width="100%" class="big-table">
                   <tr>
                     <td align="center">
                       <img src="https://raw.githubusercontent.com/ahmadtantowi/SendMail/master/SendMail/StaticFiles/images/ic_app_dev.png">
@@ -455,10 +467,37 @@ table{
                     </td>
                   </tr>
                 </table>
+                <table cellpadding="0" cellspacing="0" width="100%" class="small-table">
+                  <tr align="center">
+                    <td>
+                      <img src="https://raw.githubusercontent.com/ahmadtantowi/SendMail/master/SendMail/StaticFiles/images/ic_app_dev.png">
+                      <h4 class="txt_primary">Website<br/>Development </h3>
+                        <p>Proficient in .NET & PHP technology to provide robust and reliable web development</p>
+                        <p>&emsp;</p>
+                    </td>
+                  </tr>
+                  <tr align="center">
+                    <td>
+                      <img src="https://raw.githubusercontent.com/ahmadtantowi/SendMail/master/SendMail/StaticFiles/images/ic_chatbot.png">
+                      <h4 class="txt_primary">Chatbot<br/>Development </h3>
+                        <p>Conversational interface that enable brand reach their customer</p>
+                        <p>&emsp;</p>
+                    </td>
+                  </tr>
+                  <tr align="center">
+                    <td>
+                      <img src="https://raw.githubusercontent.com/ahmadtantowi/SendMail/master/SendMail/StaticFiles/images/ic_mobile.png">
+                      <h4 class="txt_primary">Mobile<br/>Development </h3>
+                        <p>Android, IOS, and Xamarin are our primary tools to provide the best possible mobile experience</p>
+                        <p>&emsp;</p>
+                    </td>
+                  </tr>
+                </table>
               </td>
             </tr>
             <!-- END ARTICLE -->
           </table>
+          
         </td>
       </tr>
     </table>
@@ -508,7 +547,7 @@ table{
                   <td style="text-align: center;">
                     <img src="https://raw.githubusercontent.com/ahmadtantowi/SendMail/master/SendMail/StaticFiles/images/brand_grey.png" alt="" height="32px" />
                     <p class="no-margin">Jalan Cikutra Baru X no.20, Neglasari, Cibeunying Kaler, Bandung 40124</p>
-                    <p><a href="#">Go to Radyalabs.com</a></p>
+                    <p><a href="www.radyalabs.com">Go to Radyalabs.com</a></p>
                   </td>
                 </tr>
               </table>
