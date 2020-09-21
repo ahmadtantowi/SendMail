@@ -36,11 +36,7 @@ namespace SendMail
                 {
                     var smtpOption = builder.GetSection(nameof(SmtpOption)).Get<SmtpOption>();
                     var mailOptions = builder.GetSection(nameof(MailOption)).Get<MailOption[]>() ?? Array.Empty<MailOption>();
-                    var variables = new Dictionary<string, string>();
-                    
-                    var filesHostUrl = builder.GetValue<string>("FilesHostUrl");
-                    if (!string.IsNullOrEmpty(filesHostUrl))
-                        variables.Add("FilesHostUrl", filesHostUrl);
+                    var variables = builder.GetSection("Variables").Get<IDictionary<string, string>>();
                     
                     if (mailOptions.Length != 0)
                     {
