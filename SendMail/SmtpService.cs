@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -20,6 +21,8 @@ namespace SendMail
             var receivers = await mail.GetReceivers().ConfigureAwait(false);
             if (!receivers.Any())
                 return;
+
+            var stopwatch = new Stopwatch();
 
             try
             {
@@ -46,6 +49,7 @@ namespace SendMail
                 smtpClient.Credentials = new NetworkCredential(smtp.UserName, smtp.Password);
                 smtpClient.EnableSsl = smtp.EnableSsl;
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                stopwatch.Start();
 
                 if (singleReceiver)
                 {
@@ -53,10 +57,11 @@ namespace SendMail
                     {
                         try
                         {
+                            ColorConsole.WriteInfo($"⏳ Sending mail to {mailAddress}", true);
+                            
                             mailMessage.To.Clear();
                             mailMessage.To.Add(mailAddress);
-                            
-                            ColorConsole.WriteInfo($"⏳ Sending mail to {mailAddress}", true);
+
                             await smtpClient.SendMailAsync(mailMessage).ConfigureAwait(false);
                         }
                         catch (Exception ex)
@@ -67,16 +72,24 @@ namespace SendMail
                 }
                 else
                 {
+                    ColorConsole.WriteInfo($"⏳ Sending mail to {string.Join(", ", receivers)}", true);
+                    
                     foreach (var mailAddress in receivers)
                         mailMessage.To.Add(mailAddress);
-                    
-                    ColorConsole.WriteInfo($"⏳ Sending mail to {string.Join(", ", receivers)}", true);
+
                     await smtpClient.SendMailAsync(mailMessage).ConfigureAwait(false);
                 }
+
+                stopwatch.Stop();
             }
             catch (Exception ex)
             {
                 ColorConsole.WriteError($"Oops.. Something went wrong! {Environment.NewLine}{ex.Message}", true);
+            }
+            finally
+            {
+                stopwatch.Stop();
+                ColorConsole.WriteInfo("⌛️ Total elapsed time: " + stopwatch.Elapsed, true);
             }
         }
     }
