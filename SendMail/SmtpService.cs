@@ -53,11 +53,12 @@ namespace SendMail
 
                 if (singleReceiver)
                 {
+                    var counter = 1;
                     foreach (var mailAddress in receivers)
                     {
                         try
                         {
-                            ColorConsole.WriteInfo($"⏳ Sending mail to {mailAddress}", true);
+                            ColorConsole.WriteInfo($"⏳ Sending mail to {mailAddress} ({counter})", true);
                             
                             mailMessage.To.Clear();
                             mailMessage.To.Add(mailAddress);
@@ -67,6 +68,10 @@ namespace SendMail
                         catch (Exception ex)
                         {
                             ColorConsole.WriteError($"Failed send mail to {mailAddress} {Environment.NewLine}{ex.Message}", true);
+                        }
+                        finally
+                        {
+                            counter++;
                         }
                     }
                 }
