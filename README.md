@@ -1,8 +1,8 @@
 # SendMail
 Simple console app to send mail that listed on text file. Can run on Windows, Linux or macOS!
 
-![Release](https://github.com/ahmadtantowi/SendMail/workflows/Release/badge.svg)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/ahmadtantowi/SendMail?label=Version)
+[![Release Build](https://github.com/ahmadtantowi/SendMail/workflows/Release/badge.svg)](https://github.com/ahmadtantowi/SendMail/actions?query=workflow%3ARelease)
+[![Latest Version](https://img.shields.io/github/v/release/ahmadtantowi/SendMail?label=Version)](https://github.com/ahmadtantowi/SendMail/releases/latest)
 
 ## Configuration
 Canfiguration can be done via `appsetting.json` file. You can configure mail server, mail template and variables that can use to replace string on mail template.
