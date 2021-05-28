@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title>Newsletter Radya Labs</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        *[x-apple-data-detectors], /* iOS */
+        .unstyle-auto-detected-links *,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+    </style>
+
+    <!-- CSS Reset : END -->
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+        .no-margin {
+            margin: 0 !important;
+        }
+
+        .no-padding {
+            padding: 0 !important;
+        }
+
+        .bg_primary {
+            background: #179CD6;
+        }
+
+        .bg_white {
+            background: #ffffff;
+        }
+
+        .bg_black {
+            background: #000000;
+        }
+
+        .bg_header {
+            background: #179CD6;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom;
+        }
+
+        .email-section {
+            padding: 30px;
+        }
+
+        .email-section-sec {
+            border-radius: 17px;
+        }
+        /*BUTTON*/
+        .btn {
+            padding: 8px 15px;
+            text-align: center;
+        }
+
+        .btn-block {
+            display: block;
+        }
+
+        .btn.btn-primary {
+            border-radius: 30px;
+            background: #285E84;
+            color: #ffffff;
+        }
+
+            .btn.btn-primary:hover {
+                background: #18A4E1;
+            }
+
+        .btn-article {
+            width: 200px;
+        }
+
+        /* TEXT */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 700;
+            color: #000000;
+            margin-top: 0;
+        }
+
+        .txt_primary {
+            color: #285E84;
+        }
+
+        .txt_white {
+            color: #fff;
+        }
+
+        .txt_grey {
+            color: #666;
+        }
+
+        .txt_black {
+            color: #222;
+        }
+
+        .txt_btn {
+            font-family: 'Rubik', sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .txt_title {
+            font-family: 'Kaushan Script', cursive;
+            color: #fff;
+            text-align: center;
+        }
+
+        b {
+            font-weight: 500;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #666;
+            background: #285E84;
+        }
+
+        a {
+            color: #285E84;
+        }
+
+        table {
+        }
+
+        /*LOGO*/
+        .logo h1 {
+            margin: 0;
+        }
+
+        /*GREETING*/
+        .greeting {
+            position: relative;
+        }
+
+            .greeting .text {
+            }
+
+                .greeting .text h2 {
+                    font-size: 30px;
+                    margin-bottom: 0;
+                }
+
+        /*SERVICES*/
+        .text-services {
+            padding: 10px 10px 0;
+            text-align: center;
+        }
+
+            .text-services h3 {
+                font-size: 20px;
+            }
+
+        .img1 {
+        }
+
+        .img2 {
+            margin-bottom: 40px;
+            margin-left: 20px;
+            margin-right: 60px;
+        }
+
+        .img3 {
+            margin-left: 60px;
+            margin-right: 20px;
+            margin-bottom: 40px;
+        }
+
+        .img4 {
+        }
+
+        .imglogo {
+            margin-bottom: 120px;
+        }
+
+
+        /*FOOTER*/
+        .footer {
+            color: #818181;
+            width: 360px;
+        }
+
+            .footer.top {
+                font-size: 14px;
+                color: #D9E1EE;
+                width: 360px;
+                margin-bottom: 30px;
+            }
+
+                .footer.top b {
+                    font-weight: 700;
+                }
+
+            .footer p a {
+                font-weight: 500;
+                text-decoration: underline;
+                color: #ACACAC;
+            }
+
+                .footer p a:hover {
+                    color: #285E84;
+                }
+
+
+        @media screen and (max-width: 400px) {
+
+            .mobile-d-none {
+                display: none;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #285E84;">
+
+    <!-- Begin Header -->
+    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+        <tr>
+            <td class="bg_primary logo" style=" text-align: center">
+                <img src="http://staging.radyalabs.id/newsletter-assets/images/ic_lamp2.svg" class="img1">
+                <img src="http://staging.radyalabs.id/newsletter-assets/images/ic_lamp4.svg" class="img2">
+                <img src="http://staging.radyalabs.id/newsletter-assets/images/brand_white.svg" alt="" height="40px" class="imglogo" />
+                <img src="http://staging.radyalabs.id/newsletter-assets/images/ic_lamp1.svg" class="img3">
+                <img src="http://staging.radyalabs.id/newsletter-assets/images/ic_lamp3.svg" class="img4">
+                <p style="font-size: 12px; color: #D9E1EE; margin-top: -100px; ">Kami seluruh crew Radya Labs mengucapkan</p>
+                <br>
+                <p class="txt_title no-margin" style="font-size: 32px;"><i>Selamat Hari Raya Idul Fitri</i></p>
+                <p class="txt_title no-margin" style="font-size: 24px;"><i>1 Syawal 1442 H.</i></p>
+                <p class="txt_white" style="font-size: 15px;">
+                    <i>
+                        Taqabbalallahu minna wa minkum
+                        <br>Mohon Maaf Lahir dan Batin
+                    </i>
+                </p>
+
+        </tr><!-- end tr -->
+        <tr>
+            <td class="bg_header" style="height: 16px;">
+                <center>
+                    <img src="http://staging.radyalabs.id/newsletter-assets/images/ic_mosque.svg" align="center" alt="alt_text" style="text-align: center; display: block;">
+                </center>
+            </td>
+        </tr><!-- end tr -->
+    </table>
+    <!-- End Header -->
+
+    <div style="max-width: 650px; margin: 0 auto;" class="email-container">
+        <!-- BEGIN BODY -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+            <!-- Begin Greetings -->
+            <tr>
+                <td style="padding: 2em 2em 0;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td>
+                                            <p style="font-size: 14px; color: #D9E1EE; ">Di momen yang fitri ini, kami juga ingin membagikan momen kebahagiaan di Radya Labs. Pada Tanggal 15 April kemarin, Radya Labs tepat berumur 10 tahun. Ucapan rasa syukur dan terima kasih kami berikan untuk semua peran yang terlibat, dari co-founder, kru, serta klien yang selalu membantu kami agar terus berkembang. Selain itu, kami juga telah memperbarui profil perusahaan kami menjadi lebih informatif dan interaktif dengan beberapa tambahan layanan baru yang kami tawarkan.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- End Greetings -->
+            <!-- BEGIN 03.ARTICLE -->
+            <tr>
+                <td style="padding: 2em;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <!-- BEGIN ARTICLE -->
+                        <tr>
+                            <td class="bg_white email-section email-section-sec">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td>
+                                            <span style="display: block; margin: -30px -30px 30px -30px;"><img src="http://staging.radyalabs.id/newsletter-assets/images/thumb-RL10th.jpg" alt="Thumbnails Radya Labs Grateful 10th" style="width: 100%; height: auto; display: block; border-radius: 17px 17px 0 0;"></span>
+
+                                            <h2 class="txt_primary">10 Tahun Radya Labs - Grateful 10!</h2>
+                                            <p>
+                                                Momen 1 dekade ini menjadi momen untuk bersyukur dan berterima kasih kepada semua pihak yang berperan dalam keberjalanan Radya Labs selama 10 tahun ini.
+                                            </p>
+
+                                            <p><a href="https://youtu.be/3iFFt6kfajM" target="_blank" class="btn btn-block btn-primary btn-article txt_btn">Tonton Videonya disini &nbsp; &nbsp; <img src="http://staging.radyalabs.id/newsletter-assets/images/ic_arrow_right.svg" alt=""></a> </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 2em;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <!-- BEGIN ARTICLE -->
+                        <tr>
+                            <td class="bg_white email-section email-section-sec">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td>
+                                            <span style="display: block; margin: -30px -30px 30px -30px;"><img src="http://staging.radyalabs.id/newsletter-assets/images/thumb-compro.jpg" alt="Thumbnails Company Profile" style="width: 100%; height: auto; display: block; border-radius: 17px 17px 0 0;"></span>
+
+                                            <h2 class="txt_primary">Latest Company Profile Radya labs</h2>
+                                            <p>Download profil perusahaan terbaru kami dengan klik tombol di bawah ini</p>
+
+                                            <p><a href="#" target="_blank" class="btn btn-block btn-primary btn-article txt_btn">Download Sekarang &nbsp; &nbsp; <img src="http://staging.radyalabs.id/newsletter-assets/images/ic_arrow_down.svg" alt=""></a> </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- END ARTICLE -->
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:  0 2em;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td>
+                                            <p style="font-size: 14px; color: #D9E1EE; ">Semoga kedepannya Radya Labs semakin berkembang dan dapat menjadi partner terbaik bagi perusahaan Anda.</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!-- END BODY -->
+    </div>
+
+    <!-- BEGIN FOOTER -->
+    <br /><br />
+    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+        <tr>
+            <td valign="middle" class="footer top email-section" style="background: #113956;">
+                <table style="max-width: 650px;">
+                    <tr>
+                        <td valign="top" width="30%">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="text-align: left;">
+                                        Contact our <br />
+                                        Account Manager
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td valign="top" width="70%">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="text-align: right;">
+                                        <b>Risdhika Vidiar</b> <br />
+                                        081394264864 &nbsp; | &nbsp; dhika@radyalabs.com
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr><!-- end: tr -->
+        <tr>
+            <td valign="middle" class="bg_white footer email-section">
+                <table>
+                    <tr>
+                        <td valign="middle">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="text-align: center;">
+                                        <img src="http://staging.radyalabs.id/newsletter-assets/images/brand_grey.svg" alt="" height="32px" />
+                                        <p class="no-margin">Jalan Cikutra Baru X no.20, Neglasari, Cibeunying Kaler, Bandung 40124</p>
+                                        <p><a href="https://radyalabs.com/" target="_blank">Go to Radyalabs.com</a></p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <!-- END FOOTER -->
+
+</body>
+</html>
